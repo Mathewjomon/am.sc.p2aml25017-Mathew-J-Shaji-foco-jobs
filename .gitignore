@@ -1,0 +1,14 @@
+# Environment variables — NEVER upload these
+server/.env
+
+# Node modules — too large, not needed
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Build folder
+client/build/
+
+# OS files
+.DS_Store
+Thumbs.db
