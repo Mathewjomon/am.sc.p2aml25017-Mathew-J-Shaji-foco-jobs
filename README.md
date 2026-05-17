@@ -1,84 +1,124 @@
-# FOCO JOBS
+# 🚀 FOCO JOBS
 
-A full-stack job portal built for connecting part-time job seekers and employers in Kerala.
-This platform allows employers to post jobs and manage applications, while job seekers can browse and apply for opportunities.
+### Hyperlocal Part-Time Job Platform for Kerala 🇮🇳
 
----
+*"The Spark of a Single Shift, The Fire of Worker's Independence."*
 
-## 🚀 Features
+<div align="center">
 
-### 👤 Authentication
+<img src="https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge&logo=react"/>
+<img src="https://img.shields.io/badge/Node.js-Backend-success?style=for-the-badge&logo=node.js"/>
+<img src="https://img.shields.io/badge/MongoDB-Database-darkgreen?style=for-the-badge&logo=mongodb"/>
+<img src="https://img.shields.io/badge/Kerala-Hyperlocal-orange?style=for-the-badge"/>
 
-* User registration & login
-* JWT-based authentication
-* OTP verification
-* Role-based access:
-
-  * Job Seeker
-  * Employer
-
-### 💼 Job Management
-
-* Employers can post jobs
-* View and manage applications
-* Dedicated employer dashboard
-
-### 🔍 Job Search
-
-* Browse available jobs
-* View detailed job information
-* Apply directly through the platform
-
-### 📊 Dashboards
-
-* Seeker Dashboard
-* Employer Dashboard
-
-### 🌐 Internationalization
-
-* Multi-language support using i18next
+</div>
 
 ---
 
-## 🛠 Tech Stack
+# 🌟 Overview
 
-### Frontend
+**Foco Jobs** is a full-stack MERN web application designed to connect part-time job seekers and employers across Kerala through a fast, secure, and location-aware hiring platform.
 
-* React.js
-* React Router
-* Axios
-* i18next
+The platform provides:
 
-### Backend
+* 📍 GPS-based nearby job discovery
+* 🌐 Malayalam + English bilingual support
+* 🔐 OTP-secured authentication
+* 🧠 Skill-gap feedback system
+* ⭐ Trust-based rating mechanism
 
-* Node.js
-* Express.js
-* MongoDB + Mongoose
-* JWT Authentication
-* Nodemailer
+---
+
+# ✨ Core Features
+
+## 📍 N1 — Geospatial Job Search
+
+* MongoDB 2dsphere indexing
+* Real GPS-based nearby job discovery
+* `$near` geospatial queries
+* Hyperlocal hiring experience
+
+---
+
+## 🌐 N2 — Malayalam Bilingual UI
+
+* Built using `react-i18next`
+* Instant language toggle
+* English + Malayalam localization
+* Kerala-focused accessibility
+
+---
+
+## 🧠 N3 — Skill-Gap Feedback
+
+* TF-IDF keyword matching
+* Match percentage scoring
+* Missing skill suggestions
+* Better hiring accuracy
+
+---
+
+## ⭐ N4 — Trust Rating System
+
+* Employer ↔ Worker ratings
+* 1–5 star review system
+* Real-time rating updates
+* Platform credibility system
+
+---
+
+## 🔐 N5 — OTP Verification
+
+* 6-digit OTP email verification
+* Gmail SMTP integration
+* Blocks unverified accounts
+* Secure onboarding process
+
+---
+
+# 🛠️ Tech Stack
+
+| Frontend      | Backend    | Database           |
+| ------------- | ---------- | ------------------ |
+| React.js      | Node.js    | MongoDB            |
+| React Router  | Express.js | Mongoose           |
+| Axios         | JWT Auth   | 2dsphere Index     |
+| Context API   | bcrypt.js  | Geospatial Queries |
+| react-i18next | Nodemailer |                    |
 
 ---
 
 # 📂 Project Structure
 
 ```bash
-partwork-kerala/
+foco-jobs/
 │
-├── client/        # React frontend
-├── server/        # Express backend
+├── server/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── mailer.js
+│   └── server.js
 │
-└── README.md
+└── client/
+    └── src/
+        ├── pages/
+        ├── components/
+        ├── context/
+        ├── locales/
+        └── App.js
 ```
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Installation & Setup
 
-## 1️⃣ Clone the repository
+## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/partwork-kerala.git
-cd partwork-kerala
+git clone https://github.com/your-username/foco-jobs.git
+cd foco-jobs
 ```
 
 ---
@@ -88,26 +128,25 @@ cd partwork-kerala
 ```bash
 cd server
 npm install
+npm run dev
 ```
 
 Create a `.env` file inside the `server` folder:
 
 ```env
+MONGO_URI=mongodb://localhost:27017/partwork
+
+JWT_SECRET=partwork_secret_key_2024
+
 PORT=5000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
 
-EMAIL_USER=your_email
-EMAIL_PASS=your_email_password
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USER=your_gmail@gmail.com
+MAIL_PASS=your_app_password
 ```
 
-Start the backend server:
-
-```bash
-npm run dev
-```
-
-Server runs on:
+Backend runs on:
 
 ```bash
 http://localhost:5000
@@ -117,11 +156,9 @@ http://localhost:5000
 
 # 🎨 Frontend Setup
 
-Open another terminal:
-
 ```bash
 cd client
-npm install
+npm install --legacy-peer-deps
 npm start
 ```
 
@@ -133,35 +170,72 @@ http://localhost:3000
 
 ---
 
-# 🔐 API Features
+# 🌍 Supported Cities
 
-## Authentication Routes
-
-* Register user
-* Login user
-* OTP verification
-
-## Job Routes
-
-* Create jobs
-* Fetch jobs
-* Apply for jobs
-
-## Application Routes
-
-* Manage applications
-* Employer application tracking
+* 📍 Kochi
+* 📍 Thiruvananthapuram
+* 📍 Thrissur
+* 📍 Kozhikode
+* 📍 Kollam
+* 📍 Kannur
+* 📍 Palakkad
 
 ---
 
-# 📸 Screens Included
+# 🔑 Authentication Features
 
-* Home Page
-* Login/Register
-* Job Listings
-* Job Details
-* Employer Dashboard
-* Seeker Dashboard
+* JWT Authentication
+* Password Hashing
+* OTP Verification
+* Protected Routes
+* Role-Based Access
+
+---
+
+# 💼 Employer Features
+
+* Create Job Posts
+* Manage Applications
+* View Match Scores
+* Rate Workers
+
+---
+
+# 👨‍💻 Job Seeker Features
+
+* Browse Nearby Jobs
+* Apply Instantly
+* Skill Match Feedback
+* Build Reputation Rating
+
+---
+
+# 📸 Screenshots
+
+
+## 🏠 Home Page
+
+<img width="1600" height="770" alt="image" src="https://github.com/user-attachments/assets/2247dfe6-979d-46a3-9c05-175efd332e8f" />
+
+
+---
+
+## 🔍 Job Listings
+
+*Add screenshot here*
+
+---
+
+## 📊 Employer Dashboard
+
+<img width="1362" height="850" alt="image" src="https://github.com/user-attachments/assets/1e475ebb-ff32-4c98-aacb-f77fa3f2dab8" />
+
+
+## 👤 Worker Dashboard
+
+<img width="1402" height="913" alt="image" src="https://github.com/user-attachments/assets/9bc0cb6f-0368-4eac-8a2d-bbd739dab8cd" />
+
+
 
 ---
 
@@ -184,30 +258,40 @@ npm run dev
 
 ---
 
-# 📌 Future Improvements
+# 🔮 Future Enhancements
 
-* Resume upload
-* Real-time notifications
-* Advanced job filtering
-* Payment integration
-* Admin panel
-* Chat system between employers & seekers
+* 📄 Resume Upload
+* 🔔 Real-Time Notifications
+* 🤖 AI Job Recommendations
+* 💬 In-App Chat System
+* 🛡️ Admin Dashboard
+* 📱 Progressive Web App (PWA)
+* 💳 Payment Integration
 
 ---
 
 # 🤝 Contributing
 
-Pull requests are welcome.
-For major changes, open an issue first to discuss what you would like to change.
+```bash
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+```
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+Licensed under the MIT License.
 
 ---
 
-# 👨‍💻 Author
+<div align="center">
 
-Built with ❤️ for Kerala job seekers and employers.
+# ❤️ Built for Kerala's Gig Workforce
+
+### Empowering local workers through technology.
+
+</div>
